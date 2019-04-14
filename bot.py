@@ -62,5 +62,11 @@ async def start():
 async def on_command_error(error,ctx):
     if isinstance(error, Exception, ):
         await client.say(error)
+        
+        
+@client.command()
+async def vp():
+    vp = sourov.get_voting_power()
+    await client.say(vp)
 
 client.run(os.environ.get('TOKEN'))
